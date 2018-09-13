@@ -1,5 +1,5 @@
 /*
- * Primary file for API
+ * API
  *
  */
 
@@ -27,7 +27,7 @@ const server = http.createServer(function (req, res) {
   //Get the headers as an object
   const headers = req.headers;
 
-  // Get the payload,if any
+  // Get the payload, if any
   const decoder = new StringDecoder('utf-8');
   let buffer = '';
   req.on('data', function (data) {
@@ -64,7 +64,7 @@ const server = http.createServer(function (req, res) {
         res.setHeader('Content-Type', 'application/json');
         res.writeHead(statusCode);
         res.end(payloadString);
-        console.log("Returning this response: ", statusCode, payloadString);
+        console.log('Returning this response: ', statusCode, payloadString);
 
       });
 
